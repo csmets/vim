@@ -15,6 +15,9 @@ command! MakeTags !ctags -R .
 "use 4 spaces for tabs
 set tabstop=4 softtabstop=4 shiftwidth=4
 
+" Allow to use backspace/delete
+set backspace=2
+
 set number
 
 set nowrap
@@ -26,13 +29,14 @@ set colorcolumn=80
 " Read nunjucks files
 au BufReadPost *.njk set syntax=html
 
+" Search and replace shortcut for selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 call plug#begin()
 
 Plug 'https://github.com/pangloss/vim-javascript.git'
 
 Plug 'https://github.com/vim-syntastic/syntastic.git'
-
-Plug 'elzr/vim-json'
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
 
@@ -41,8 +45,6 @@ Plug 'justincampbell/vim-eighties'
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
-
-let g:javascript_plugin_flow = 1
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -53,7 +55,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_eslint_exec = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
 " NERDTree settings
 autocmd StdinReadPre * let s:std_in=1
