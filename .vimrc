@@ -26,6 +26,8 @@ set textwidth=0 wrapmargin=0
 
 set colorcolumn=80
 
+set smartindent
+
 " Read nunjucks files
 au BufReadPost *.njk set syntax=html
 
