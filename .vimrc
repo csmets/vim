@@ -8,12 +8,13 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
+set wildmode=list:longest,full
 
 " Create the `tags` file (may need to install ctags first)
 command! MakeTags !ctags -R .
 
 "use 4 spaces for tabs
-set tabstop=4 softtabstop=4 shiftwidth=4
+set tabstop=4 shiftwidth=4 expandtab
 
 " Allow to use backspace/delete
 set backspace=2
@@ -31,14 +32,15 @@ set autoindent
 " Read nunjucks files
 au BufReadPost *.njk set syntax=html
 
+" Set text width for txt and md files
+au BufNewFile,BufFilePre,BufRead *.md,*.txt set tw=80 fo+=t colorcolumn=80 wrap
+
 " Search and replace shortcut for selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 call plug#begin()
 
 Plug 'https://github.com/pangloss/vim-javascript.git'
-
-Plug 'https://github.com/vim-syntastic/syntastic.git'
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
 
@@ -50,21 +52,9 @@ Plug 'https://github.com/leafgarland/typescript-vim.git'
 
 Plug 'https://github.com/mattn/emmet-vim.git'
 
+Plug 'https://github.com/w0rp/ale.git'
+
 call plug#end()
-
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Skip html file checks
-let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " NERDTree settings
 autocmd StdinReadPre * let s:std_in=1
