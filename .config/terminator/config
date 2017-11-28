@@ -1,0 +1,21 @@
+[global_config]
+  title_font = Ubuntu Mono 11
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#2d2d2d"
+    background_image = None
+    cursor_color = "#cccccc"
+    font = Roboto Mono for Powerline 10
+    foreground_color = "#cccccc"
+    palette = "#000000:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#ffffff:#000000:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#ffffff"
+    use_system_font = False

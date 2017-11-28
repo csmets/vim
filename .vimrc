@@ -20,12 +20,14 @@ set tabstop=4 shiftwidth=4 expandtab
 set backspace=2
 
 set number
+highlight LineNr ctermfg=grey ctermbg=black
 
 set nowrap
 
 set textwidth=0 wrapmargin=0
 
 set colorcolumn=80
+highlight ColorColumn ctermbg=3
 
 set autoindent
 
@@ -38,6 +40,7 @@ au BufNewFile,BufFilePre,BufRead *.md,*.txt set tw=80 fo+=t colorcolumn=80 wrap
 " Search and replace shortcut for selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+" Vim Plug is used to install the plugins
 call plug#begin()
 
 Plug 'https://github.com/pangloss/vim-javascript.git'
