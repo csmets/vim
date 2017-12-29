@@ -57,6 +57,10 @@ Plug 'https://github.com/mattn/emmet-vim.git'
 
 Plug 'https://github.com/w0rp/ale.git'
 
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+
+Plug 'https://github.com/tpope/vim-fugitive.git'
+
 call plug#end()
 
 " NERDTree settings
