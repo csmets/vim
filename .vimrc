@@ -94,6 +94,8 @@ Plug 'mklabs/split-term.vim'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 " JSX Settings
@@ -179,3 +181,6 @@ let g:ctrlp_use_caching=0
 
 " use default VCS command to list files
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+" vim-airline settings
+let g:airline_powerline_fonts = 1
