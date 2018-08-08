@@ -92,6 +92,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'mklabs/split-term.vim'
 
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()
 
 " JSX Settings
