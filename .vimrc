@@ -145,19 +145,6 @@ let NERDTreeIgnore = [ '\.pyc$', 'target$[[dir]]', 'dependency-reduced-pom.xml',
 " show hidden files
 let NERDTreeShowHidden=1
 
-" Status line info bar
-set ruler
-set laststatus=2
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%=      "left/right separator
-set statusline+=%y\     "filetype
-set statusline+=%c%V:     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 
